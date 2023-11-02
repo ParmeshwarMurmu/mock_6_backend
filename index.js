@@ -1,6 +1,7 @@
 const express = require('express')
 require('dotenv').config()
 const { connection } = require('./db')
+const { taskRoute } = require('./AllRoutes/TaskRoute')
 const cors = require('cors')
 
 
@@ -8,6 +9,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use('/board', taskRoute)
 
 
 
